@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 180" role="img" aria-label="Juego infantil">
+  <rect width="300" height="180" fill="#c455c7"/>
+  <rect x="52" y="48" width="56" height="56" fill="#fff"/>
+  <circle cx="150" cy="76" r="28" fill="#fff"/>
+  <polygon points="205,104 238,48 271,104" fill="#fff"/>
+  <text x="150" y="162" text-anchor="middle" fill="#fff" font-size="20" font-family="Arial">Juego</text>
+</svg>

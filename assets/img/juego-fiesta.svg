@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 180" role="img" aria-label="Juego de fiesta">
+  <rect width="300" height="180" fill="#ff8f3f"/>
+  <rect x="58" y="52" width="40" height="70" fill="#fff"/>
+  <rect x="130" y="52" width="40" height="70" fill="#fff"/>
+  <rect x="202" y="52" width="40" height="70" fill="#fff"/>
+  <text x="150" y="162" text-anchor="middle" fill="#fff" font-size="20" font-family="Arial">Juego</text>
+</svg>
