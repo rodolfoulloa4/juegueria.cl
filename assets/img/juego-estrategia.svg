@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 180" role="img" aria-label="Juego de estrategia">
+  <rect width="300" height="180" fill="#2d5baf"/>
+  <circle cx="65" cy="90" r="26" fill="#fff"/>
+  <rect x="115" y="58" width="120" height="65" rx="8" fill="#fff"/>
+  <text x="150" y="165" text-anchor="middle" fill="#fff" font-size="20" font-family="Arial">Juego</text>
+</svg>
