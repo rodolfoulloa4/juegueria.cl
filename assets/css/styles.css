@@ -142,6 +142,61 @@ h2 {
   gap: 0.7rem;
 }
 
+.descripcion-registro {
+  margin-top: 0;
+}
+
+#form-registro .form-label {
+  font-weight: 700;
+}
+
+#form-registro .form-control {
+  border-radius: 10px;
+  border: 1px solid #cfd9eb;
+}
+
+#form-registro .form-control:focus {
+  border-color: var(--color-primario);
+  box-shadow: 0 0 0 0.22rem rgba(45, 91, 175, 0.2);
+}
+
+.mensaje-formulario {
+  min-height: 1.6rem;
+  margin: 0.9rem 0 0;
+  font-weight: 700;
+}
+
+.mensaje-formulario.ok {
+  color: #1e7d3a;
+}
+
+.mensaje-formulario.error {
+  color: #b53737;
+}
+
+.resumen-registro {
+  margin-top: 1rem;
+  background: #f0f5ff;
+  border: var(--borde-suave);
+  border-radius: var(--radio);
+  padding: 1rem;
+  animation: aparecer 0.5s ease;
+}
+
+.resumen-registro h3 {
+  margin-top: 0;
+  color: var(--color-primario);
+  font-size: 1.1rem;
+}
+
+.resumen-registro ul {
+  padding-left: 1.1rem;
+}
+
+body.registro-exitoso .encabezado {
+  background: linear-gradient(135deg, #2b7a3f, #3ea157);
+}
+
 footer {
   text-align: center;
   padding: 1.5rem;
@@ -215,5 +270,9 @@ footer {
 
   .encabezado {
     padding: 1.4rem 1rem;
+  }
+
+  #form-registro .btn {
+    width: 100%;
   }
 }

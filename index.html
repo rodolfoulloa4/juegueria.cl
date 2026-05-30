@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>La Jueguería | lajuegueria.cl</title>
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body id="inicio">
@@ -17,9 +18,10 @@
     <a href="#familiares">Familiares</a>
     <a href="#infantiles">Infantiles</a>
     <a href="#fiesta">Fiesta</a>
+    <a href="#registro">Registro</a>
   </nav>
 
-  <main>
+  <main class="container py-3">
     <section class="categorias" aria-labelledby="titulo-categorias">
       <h2 id="titulo-categorias">Categorías de juegos</h2>
       <div class="grilla-categorias">
@@ -169,10 +171,80 @@
         <a href="#inicio">Volver al inicio</a>
       </nav>
     </section>
+
+    <section id="registro" class="categoria-detalle" aria-labelledby="titulo-registro">
+      <h2 id="titulo-registro">Registro de compradores</h2>
+      <p class="descripcion-registro">Completa tus datos para participar en recompensas por compras frecuentes.</p>
+
+      <form id="form-registro" class="row g-3 needs-validation" novalidate>
+        <div class="col-12 col-md-6">
+          <label class="form-label" for="nombreCompleto">Nombre completo</label>
+          <input class="form-control" type="text" id="nombreCompleto" name="nombreCompleto" required>
+          <div class="invalid-feedback">Ingresa tu nombre completo.</div>
+        </div>
+
+        <div class="col-12 col-md-6">
+          <label class="form-label" for="usuario">Nombre de usuario</label>
+          <input class="form-control" type="text" id="usuario" name="usuario" minlength="3" required>
+          <div class="invalid-feedback">Ingresa un nombre de usuario (mínimo 3 caracteres).</div>
+        </div>
+
+        <div class="col-12 col-md-6">
+          <label class="form-label" for="email">Correo electrónico</label>
+          <input class="form-control" type="email" id="email" name="email" required>
+          <div class="invalid-feedback">Ingresa un correo válido.</div>
+        </div>
+
+        <div class="col-12 col-md-6">
+          <label class="form-label" for="fechaNacimiento">Fecha de nacimiento</label>
+          <input class="form-control" type="date" id="fechaNacimiento" name="fechaNacimiento" required>
+          <div class="invalid-feedback">Debes tener al menos 13 años para registrarte.</div>
+        </div>
+
+        <div class="col-12 col-md-6">
+          <label class="form-label" for="clave">Contraseña</label>
+          <input class="form-control" type="password" id="clave" name="clave" minlength="6" maxlength="18" required>
+          <div class="form-text">Debe incluir al menos una mayúscula y un número (6 a 18 caracteres).</div>
+          <div class="invalid-feedback">La contraseña no cumple los requisitos.</div>
+        </div>
+
+        <div class="col-12 col-md-6">
+          <label class="form-label" for="repetirClave">Repetir contraseña</label>
+          <input class="form-control" type="password" id="repetirClave" name="repetirClave" minlength="6" maxlength="18" required>
+          <div class="invalid-feedback">Las contraseñas deben coincidir.</div>
+        </div>
+
+        <div class="col-12">
+          <label class="form-label" for="direccion">Dirección de despacho (opcional)</label>
+          <textarea class="form-control" id="direccion" name="direccion" rows="2" placeholder="Ejemplo: Av. Siempre Viva 742, Santiago"></textarea>
+        </div>
+
+        <div class="col-12 d-flex flex-wrap gap-2 mt-1">
+          <button class="btn btn-warning" type="submit">Enviar formulario</button>
+          <button class="btn btn-outline-secondary" type="reset">Limpiar formulario</button>
+        </div>
+      </form>
+
+      <p id="mensajeFormulario" class="mensaje-formulario" role="status" aria-live="polite"></p>
+
+      <div id="resumenRegistro" class="resumen-registro" hidden>
+        <h3>Resumen de registro</h3>
+        <ul class="mb-0">
+          <li><strong>Nombre:</strong> <span data-resumen="nombre"></span></li>
+          <li><strong>Usuario:</strong> <span data-resumen="usuario"></span></li>
+          <li><strong>Correo:</strong> <span data-resumen="email"></span></li>
+          <li><strong>Fecha de nacimiento:</strong> <span data-resumen="fechaNacimiento"></span></li>
+          <li><strong>Dirección:</strong> <span data-resumen="direccion"></span></li>
+        </ul>
+      </div>
+    </section>
   </main>
 
   <footer>
     <p>&copy; 2026 La Jueguería - Catálogo de Juegos de Mesa</p>
   </footer>
+
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/form-validation.js"></script>
 </body>
 </html>
