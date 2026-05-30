@@ -14,6 +14,7 @@
   </header>
 
   <nav class="navegacion" aria-label="Navegación principal">
+    <a href="#destacados">Destacados</a>
     <a href="#estrategia">Estrategia</a>
     <a href="#familiares">Familiares</a>
     <a href="#infantiles">Infantiles</a>
@@ -22,7 +23,38 @@
   </nav>
 
   <main class="container py-3">
-    <section class="categorias" aria-labelledby="titulo-categorias">
+    <section id="destacados" class="categoria-detalle" aria-labelledby="titulo-destacados">
+      <h2 id="titulo-destacados">Juegos destacados</h2>
+      <div class="grilla-juegos">
+        <article class="ficha-juego">
+          <img src="assets/img/juego-estrategia.svg" alt="Juego destacado Torres del Reino">
+          <h3>Torres del Reino</h3>
+          <p>Un clásico de estrategia para quienes disfrutan planificar cada turno.</p>
+          <p class="precio">$24.990</p>
+          <p class="descuento">Destacado semanal</p>
+        </article>
+        <article class="ficha-juego">
+          <img src="assets/img/juego-familiares.svg" alt="Juego destacado Aventuras en Casa">
+          <h3>Aventuras en Casa</h3>
+          <p>Perfecto para tardes familiares con reglas simples y partidas rápidas.</p>
+          <p class="precio">$16.490</p>
+          <p class="descuento">Favorito familiar</p>
+        </article>
+        <article class="ficha-juego">
+          <img src="assets/img/juego-fiesta.svg" alt="Juego destacado Palabra Prohibida">
+          <h3>Palabra Prohibida</h3>
+          <p>Ideal para reuniones con retos de creatividad y muchas risas.</p>
+          <p class="precio">$15.990</p>
+          <p class="descuento">Top en fiestas</p>
+        </article>
+      </div>
+      <nav class="enlaces-internos" aria-label="Navegación juegos destacados">
+        <a href="#categorias">Ver categorías</a>
+        <a href="#inicio">Volver al inicio</a>
+      </nav>
+    </section>
+
+    <section id="categorias" class="categorias" aria-labelledby="titulo-categorias">
       <h2 id="titulo-categorias">Categorías de juegos</h2>
       <div class="grilla-categorias">
         <article class="tarjeta-categoria">
