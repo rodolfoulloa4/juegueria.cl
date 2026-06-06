@@ -8,21 +8,61 @@
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body id="inicio">
+  <a class="skip-link" href="#contenidoPrincipal">Saltar al contenido principal</a>
   <header class="encabezado">
     <h1>La Jueguería</h1>
-    <p>Tu catálogo de juegos de mesa en <strong>lajuegueria.cl</strong></p>
+    <p>Convierte cualquier día en una gran partida con los mejores juegos de mesa.</p>
   </header>
 
-  <nav class="navegacion" aria-label="Navegación principal">
-    <a href="#destacados">Destacados</a>
-    <a href="#estrategia">Estrategia</a>
-    <a href="#familiares">Familiares</a>
-    <a href="#infantiles">Infantiles</a>
-    <a href="#fiesta">Fiesta</a>
-    <a href="#registro">Registro</a>
+  <nav id="menuPrincipal" class="navegacion navbar navbar-expand-lg" aria-label="Navegación principal">
+    <div class="container-fluid px-0">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarPrincipalContenido" aria-controls="navbarPrincipalContenido" aria-expanded="false" aria-label="Mostrar navegación">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarPrincipalContenido">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 menu-categorias">
+          <li class="nav-item"><a class="nav-link" href="#destacados" data-nav="catalogo">Catálogo</a></li>
+          <li class="nav-item"><a class="nav-link" href="#categorias">Categorías</a></li>
+          <li class="nav-item"><a class="nav-link" href="#destacados">Destacados</a></li>
+          <li class="nav-item"><a class="nav-link" href="#estrategia">Estrategia</a></li>
+          <li class="nav-item"><a class="nav-link" href="#familiares">Familiares</a></li>
+          <li class="nav-item"><a class="nav-link" href="#infantiles">Infantiles</a></li>
+          <li class="nav-item"><a class="nav-link" href="#fiesta">Fiesta</a></li>
+        </ul>
+
+        <ul id="menuUsuario" class="navbar-nav ms-auto menu-usuario" aria-label="Opciones de usuario">
+          <li class="nav-item">
+            <a id="btnCarritoRapido" class="btn btn-carrito-rapido" href="#carrito">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L1.01 2H.5A.5.5 0 0 1 0 1.5M3.102 4l1.313 7h8.17l1.313-7zM5 12.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3m7 0a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3"/>
+              </svg>
+              <span>Carro</span>
+              <span id="btnCarritoCantidad"></span>
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <button id="submenuUsuarioTrigger" class="btn usuario-trigger dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Mi cuenta <span id="badgeUsuarioMenu" class="badge-usuario-menu">Invitado</span>
+            </button>
+            <ul id="submenuUsuario" class="dropdown-menu dropdown-menu-end submenu-contenido" aria-labelledby="submenuUsuarioTrigger">
+              <li><a class="dropdown-item" href="#registro" id="navRegistro" data-auth="guest">Registro</a></li>
+              <li><a class="dropdown-item" href="#login" id="navLogin" data-auth="guest">Login</a></li>
+              <li><a class="dropdown-item" href="#recuperacion" id="navRecuperacion" data-auth="guest">Recuperar clave</a></li>
+              <li><a class="dropdown-item" href="#perfil" id="navPerfil" data-auth="auth" hidden>Mi perfil</a></li>
+              <li><a class="dropdown-item" href="#carrito" id="navCarrito" hidden>Carrito</a></li>
+              <li><a class="dropdown-item" href="#historial" id="navHistorial" hidden>Historial</a></li>
+              <li><a class="dropdown-item" href="#gestionInventario" id="navInventario" data-role="administrador" hidden>Gestión de inventario</a></li>
+              <li><a class="dropdown-item" href="#clientes" id="navClientes" data-role="administrador" hidden>Mantenedor de clientes</a></li>
+              <li><button type="button" id="cerrarSesionNav" class="dropdown-item nav-boton" hidden>Cerrar sesión</button></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
   </nav>
 
-  <main class="container py-3">
+  <main id="contenidoPrincipal" class="container py-3">
     <section id="destacados" class="categoria-detalle" aria-labelledby="titulo-destacados">
       <h2 id="titulo-destacados">Juegos destacados</h2>
       <div class="grilla-juegos">
@@ -252,7 +292,7 @@
         </div>
 
         <div class="col-12 d-flex flex-wrap gap-2 mt-1">
-          <button class="btn btn-warning" type="submit">Enviar formulario</button>
+          <button class="btn btn-primary" type="submit">Enviar formulario</button>
           <button class="btn btn-outline-secondary" type="reset">Limpiar formulario</button>
         </div>
       </form>
@@ -268,15 +308,204 @@
           <li><strong>Fecha de nacimiento:</strong> <span data-resumen="fechaNacimiento"></span></li>
           <li><strong>Dirección:</strong> <span data-resumen="direccion"></span></li>
         </ul>
+        <a class="btn btn-primary btn-sm mt-3" href="#login">Ir a Login</a>
+      </div>
+    </section>
+
+    <section id="login" class="categoria-detalle" aria-labelledby="titulo-login">
+      <h2 id="titulo-login">Inicio de sesión</h2>
+      <p class="descripcion-registro">Accede con un usuario registrado o con la cuenta de prueba <strong>admin / admin123</strong>.</p>
+      <form id="form-login" class="row g-3" novalidate>
+        <div class="col-12 col-lg-6">
+          <label class="form-label" for="loginIdentificador">Usuario o correo</label>
+          <input class="form-control" type="text" id="loginIdentificador" required>
+        </div>
+        <div class="col-12 col-lg-6">
+          <label class="form-label" for="loginClave">Contraseña</label>
+          <input class="form-control" type="password" id="loginClave" required>
+        </div>
+        <div class="col-12 d-flex flex-wrap gap-2 mt-1">
+          <button class="btn btn-primary" type="submit">Ingresar</button>
+          <a class="btn btn-outline-secondary" href="#recuperacion">Olvidé mi contraseña</a>
+        </div>
+      </form>
+      <p id="mensajeLogin" class="mensaje-formulario" role="status" aria-live="polite"></p>
+    </section>
+
+    <section id="recuperacion" class="categoria-detalle" aria-labelledby="titulo-recuperacion">
+      <h2 id="titulo-recuperacion">Recuperación de contraseña</h2>
+      <p class="descripcion-registro">Ingresa tu correo y te mostraremos una confirmación simulada en pantalla.</p>
+      <form id="form-recuperacion" class="row g-3" novalidate>
+        <div class="col-12 col-lg-7">
+          <label class="form-label" for="recuperacionEmail">Correo electrónico</label>
+          <input class="form-control" type="email" id="recuperacionEmail" required>
+        </div>
+        <div class="col-12 col-lg-5 d-flex align-items-end">
+          <button class="btn btn-primary w-100" type="submit">Recuperar acceso</button>
+        </div>
+      </form>
+      <p id="mensajeRecuperacion" class="mensaje-formulario" role="status" aria-live="polite"></p>
+    </section>
+
+    <section id="perfil" class="categoria-detalle" aria-labelledby="titulo-perfil" hidden>
+      <h2 id="titulo-perfil">Modificación de perfil</h2>
+      <p class="descripcion-registro">Actualiza tu información desde la sesión activa.</p>
+      <form id="form-perfil" class="row g-3" novalidate>
+        <div class="col-12 col-md-6">
+          <label class="form-label" for="perfilNombre">Nombre completo</label>
+          <input class="form-control" type="text" id="perfilNombre" required>
+        </div>
+        <div class="col-12 col-md-6">
+          <label class="form-label" for="perfilUsuario">Nombre de usuario</label>
+          <input class="form-control" type="text" id="perfilUsuario" readonly>
+        </div>
+        <div class="col-12 col-md-6">
+          <label class="form-label" for="perfilCorreo">Correo electrónico</label>
+          <input class="form-control" type="email" id="perfilCorreo" required>
+        </div>
+        <div class="col-12 col-md-6">
+          <label class="form-label" for="perfilDireccion">Dirección de despacho</label>
+          <input class="form-control" type="text" id="perfilDireccion">
+        </div>
+        <div class="col-12 col-md-6">
+          <label class="form-label" for="perfilClave">Nueva contraseña</label>
+          <input class="form-control" type="password" id="perfilClave" placeholder="Deja vacío para conservar la actual">
+          <div class="form-text">Si la cambias, debe incluir una mayúscula y un número.</div>
+        </div>
+        <div class="col-12 d-flex flex-wrap gap-2 mt-1">
+          <button class="btn btn-primary" type="submit">Guardar cambios</button>
+        </div>
+      </form>
+      <p id="mensajePerfil" class="mensaje-formulario" role="status" aria-live="polite"></p>
+    </section>
+
+    <section id="carrito" class="categoria-detalle" aria-labelledby="titulo-carrito">
+      <h2 id="titulo-carrito">Carrito de compras</h2>
+      <p class="descripcion-registro">Agrega juegos desde el catálogo y simula una compra completa.</p>
+      <div id="carritoVacio" class="seccion-vacia">Todavía no agregas juegos al carrito.</div>
+      <div class="table-responsive" id="tablaCarritoWrapper" hidden>
+        <table class="table align-middle tabla-panel">
+          <thead>
+            <tr>
+              <th>Juego</th>
+              <th>Precio</th>
+              <th>Cantidad</th>
+              <th>Subtotal</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="tablaCarrito"></tbody>
+        </table>
+      </div>
+      <div id="resumenCarrito" class="resumen-estado" hidden>
+        <p><strong>Total:</strong> <span id="totalCarrito">$0</span></p>
+        <button id="btnComprar" class="btn btn-primary" type="button">Simular compra</button>
+      </div>
+      <p id="mensajeCarrito" class="mensaje-formulario" role="status" aria-live="polite"></p>
+    </section>
+
+    <section id="historial" class="categoria-detalle" aria-labelledby="titulo-historial">
+      <h2 id="titulo-historial">Historial de compras</h2>
+      <p class="descripcion-registro">Revisa las compras simuladas asociadas a tu sesión.</p>
+      <div id="historialContenido" class="seccion-vacia">Inicia sesión para revisar tu historial de compras.</div>
+    </section>
+
+    <section id="confirmacionCompra" class="categoria-detalle" aria-labelledby="titulo-confirmacion">
+      <h2 id="titulo-confirmacion">Confirmación de compra</h2>
+      <p class="descripcion-registro">Tu compra simulada fue procesada correctamente.</p>
+      <div class="resumen-estado">
+        <p><strong>N° de orden:</strong> <span id="confirmacionOrdenId">-</span></p>
+        <p><strong>Fecha:</strong> <span id="confirmacionFecha">-</span></p>
+        <p><strong>Total:</strong> <span id="confirmacionTotal">$0</span></p>
+      </div>
+      <div class="d-flex flex-wrap gap-2 mt-3">
+        <a class="btn btn-primary" href="#historial">Ver historial</a>
+        <a class="btn btn-outline-secondary" href="#destacados">Seguir comprando</a>
+      </div>
+    </section>
+
+    <section id="gestionInventario" class="categoria-detalle" aria-labelledby="titulo-inventario" hidden>
+      <h2 id="titulo-inventario">Gestión de inventario</h2>
+      <p class="descripcion-registro">Vista exclusiva para administrador con un CRUD simulado sobre el inventario.</p>
+      <form id="form-inventario" class="row g-3" novalidate>
+        <input type="hidden" id="inventarioId">
+        <div class="col-12 col-md-4">
+          <label class="form-label" for="inventarioNombre">Nombre del juego</label>
+          <input class="form-control" type="text" id="inventarioNombre" required>
+        </div>
+        <div class="col-12 col-md-3">
+          <label class="form-label" for="inventarioCategoria">Categoría</label>
+          <input class="form-control" type="text" id="inventarioCategoria" required>
+        </div>
+        <div class="col-12 col-md-2">
+          <label class="form-label" for="inventarioPrecio">Precio</label>
+          <input class="form-control" type="number" id="inventarioPrecio" min="0" required>
+        </div>
+        <div class="col-12 col-md-3">
+          <label class="form-label" for="inventarioStock">Stock</label>
+          <input class="form-control" type="number" id="inventarioStock" min="0" required>
+        </div>
+        <div class="col-12 col-lg-8">
+          <label class="form-label" for="inventarioDescripcion">Descripción</label>
+          <input class="form-control" type="text" id="inventarioDescripcion" required>
+        </div>
+        <div class="col-12 col-lg-4">
+          <label class="form-label" for="inventarioEtiqueta">Etiqueta comercial</label>
+          <input class="form-control" type="text" id="inventarioEtiqueta" placeholder="Ej: Novedad de la semana">
+        </div>
+        <div class="col-12 d-flex flex-wrap gap-2 mt-1">
+          <button class="btn btn-primary" type="submit">Guardar juego</button>
+          <button class="btn btn-outline-secondary" type="reset">Limpiar</button>
+        </div>
+      </form>
+      <p id="mensajeInventario" class="mensaje-formulario" role="status" aria-live="polite"></p>
+      <div class="table-responsive mt-3">
+        <table class="table align-middle tabla-panel">
+          <thead>
+            <tr>
+              <th>Juego</th>
+              <th>Categoría</th>
+              <th>Precio</th>
+              <th>Stock</th>
+              <th>Etiqueta</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="tablaInventario"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="clientes" class="categoria-detalle" aria-labelledby="titulo-clientes" hidden>
+      <h2 id="titulo-clientes">Mantenedor de clientes</h2>
+      <p class="descripcion-registro">Listado de usuarios registrados para revisión administrativa.</p>
+      <div class="table-responsive">
+        <table class="table align-middle tabla-panel">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Usuario</th>
+              <th>Correo</th>
+              <th>Rol</th>
+              <th>Dirección</th>
+            </tr>
+          </thead>
+          <tbody id="tablaClientes"></tbody>
+        </table>
       </div>
     </section>
   </main>
+
+  <button id="btnVolverMenu" class="btn-menu-flotante" type="button" hidden>Volver al menú</button>
 
   <footer>
     <p>&copy; 2026 La Jueguería - Catálogo de Juegos de Mesa</p>
   </footer>
 
   <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/storage.js"></script>
+  <script src="assets/js/auth.js"></script>
   <script src="assets/js/form-validation.js"></script>
+  <script src="assets/js/app.js"></script>
 </body>
 </html>
