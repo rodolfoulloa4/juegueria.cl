@@ -90,6 +90,13 @@ Cuenta de prueba administrador:
 - Edicion de perfil (nombre, correo, direccion y clave opcional).
 - Badge de estado en menu de usuario (Invitado, nombre o Admin).
 
+### 2.1) Recuperacion de contraseña
+
+- Formulario que requiere correo valido.
+- Si el correo existe en la base de datos: muestra la contraseña real del usuario de forma visual.
+- Si el correo no existe: muestra mensaje generico (por seguridad, no revela si el correo esta registrado).
+- Permite acceder con las credenciales recuperadas.
+
 ### 3) Carrito de compras
 
 - Agregar productos desde tarjetas del catalogo.

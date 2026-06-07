@@ -119,7 +119,7 @@
       return;
     }
 
-    element.textContent = message;
+    element.innerHTML = message;
     element.className = "mensaje-formulario" + (type ? " " + type : "");
   }
 
@@ -598,7 +598,16 @@
       return;
     }
 
-    setMessage(elements.recoveryMessage, "Si el correo existe en el sistema, enviamos instrucciones de recuperación simuladas.", "ok");
+    var user = storage.findUserByEmail(email);
+
+    if (!user) {
+      setMessage(elements.recoveryMessage, "Si el correo existe en el sistema, enviamos instrucciones de recuperación simuladas.", "ok");
+      elements.recoveryForm.reset();
+      return;
+    }
+
+    var recoveryMessage = "Tu contraseña es: <strong>" + user.contrasena + "</strong>. Usa esta clave junto con tu usuario <strong>" + user.usuario + "</strong> para iniciar sesión.";
+    setMessage(elements.recoveryMessage, recoveryMessage, "ok");
     elements.recoveryForm.reset();
   }
 
